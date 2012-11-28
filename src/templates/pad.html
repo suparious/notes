@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>fNotes</title>
+<link rel="stylesheet" href="/static/jquery.mobile-1.0b2.css" />
+<style>
+body{backgroud-color:red;}
+.tcell{display:table-cell;padding:5px;}
+
+#header {}
+#main {display:table;margin-right:15px;}
+    #col1{width:10%;min-width:120px;}
+    #col2{width:20%;min-width:220px;}
+    #col3{width:70%;}
+</style>
+</head>
+<body>
+<div class="ui-bar ui-footer ui-bar-a" data-role="footer" data-position="inline" role="contentinfo">
+        <div data-role="controlgroup" data-type="horizontal" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal">
+            <a href="index.html" data-icon="delete" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left ui-corner-left">
+                <span class="ui-btn-inner ui-corner-left">
+                    <span class="ui-btn-text">Remove</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-delete"></span>
+                </span>
+            </a>
+
+            <a href="index.html" data-icon="plus" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Add</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-plus"></span>
+                </span>
+            </a>
+
+            <a href="index.html" data-icon="arrow-u" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Up</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-arrow-u"></span>
+                </span>
+            </a>
+
+            <a href="index.html" data-icon="arrow-d" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left ui-corner-right ui-controlgroup-last">
+                <span class="ui-btn-inner ui-corner-right ui-controlgroup-last">
+                    <span class="ui-btn-text">Down</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-arrow-d"></span>
+                </span>
+            </a>
+        </div>
+</div>
+<br /><br /><br />
+
+<div style="margin:10px;">
+    <a style="width:150px;" href="javascript:;" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-up-a">
+        <span class="ui-btn-inner ui-btn-corner-all">
+            <span class="ui-btn-text">fNotes</span>
+            <span class="ui-icon ui-icon-arrow-d ui-icon-shadow"></span>
+        </span>
+    </a>
+
+    <form class="ui-listview-filter ui-bar-c">
+        <div class="ui-input-search ui-shadow-inset ui-btn-corner-all ui-btn-shadow ui-icon-searchfield ui-body-c">
+            <input placeholder="Input keywords..."  class="ui-input-text ui-body-null">
+        </div>
+    </form>
+
+    <div class="ui-bar ui-footer ui-bar-a" data-role="footer" data-position="inline" role="contentinfo">
+        <div data-role="controlgroup" data-type="horizontal" class="ui-corner-all ui-controlgroup ui-controlgroup-horizontal">
+            <a href="index.html" data-icon="delete" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left ui-corner-left">
+                <span class="ui-btn-inner ui-corner-left">
+                    <span class="ui-btn-text">Remove</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-delete"></span>
+                </span>
+            </a>
+
+            <a href="index.html" data-icon="plus" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Add</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-plus"></span>
+                </span>
+            </a>
+
+            <a href="index.html" data-icon="arrow-u" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Up</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-arrow-u"></span>
+                </span>
+            </a>
+
+            <a href="index.html" data-icon="arrow-d" data-theme="a" class="ui-btn ui-btn-up-a ui-btn-icon-left ui-corner-right ui-controlgroup-last">
+                <span class="ui-btn-inner ui-corner-right ui-controlgroup-last">
+                    <span class="ui-btn-text">Down</span>
+                    <span class="ui-icon ui-icon-shadow ui-icon-arrow-d"></span>
+                </span>
+            </a>
+        </div>
+     </div>
+<br /><br /><br />
+        <div class="content-primary">
+                <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                    <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-corner-top">Components</li>
+
+                    <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-btn-up-c">
+                        <div class="ui-btn-inner ui-li">
+                            <div class="ui-btn-text">
+                                <a href="docs/pages/index.html" class="ui-link-inherit">Pages &amp; dialogs</a>
+                            </div>
+                            <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+                        </div>
+                    </li>
+
+                    <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-btn ui-bar-b ui-btn-up-undefined">API</li>
+
+                    <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-btn-up-c">
+                        <div class="ui-btn-inner ui-li">
+                            <div class="ui-btn-text">
+                                <a href="docs/api/globalconfig.html" class="ui-link-inherit">Configuring defaults</a>
+                                <a href="docs/api/globalconfig.html" class="ui-link-inherit">Configuring defaults</a>
+                                <a href="docs/api/globalconfig.html" class="ui-link-inherit">Configuring defaults</a>
+                            </div>
+                            <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+                        </div>
+                    </li>
+
+                    <li data-theme="c" class="ui-btn ui-btn-icon-right ui-li ui-corner-bottom ui-btn-up-c">
+                        <div class="ui-btn-inner ui-li">
+                            <div class="ui-btn-text">ss<br/>
+                                <a href="docs/api/themes.html" class="ui-link-inherit">Theme framework</a>
+                                <a href="docs/api/themes.html" class="ui-link-inherit">Theme framework</a>
+                                <a href="docs/api/themes.html" class="ui-link-inherit">Theme framework</a>
+                                <a href="docs/api/themes.html" class="ui-link-inherit">Theme framework</a>
+                                <a href="docs/api/themes.html" class="ui-link-inherit">Theme framework</a>
+                            </div>
+                            <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+                        </div>
+                    </li>
+
+                </ul>
+
+        </div>
+
+
+
+</div>
+
+
+</body>
+</html>

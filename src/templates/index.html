@@ -1,0 +1,61 @@
+$def with(model)
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>fNotes</title>
+<meta name="keywords" content="fNotes" />
+<meta name="description" content="fNotes" />
+<link rel="stylesheet" type="text/css" href="/static/main.css"/>
+</head>
+<body>
+<header id="header">
+    <a href="javascript:;">fNotes</a>
+    <!-- start menu
+        <ul class="menu">
+            <li><a href="javascript:;">$context.usr.email</a></li>
+            <li><a href="javascript:;">change password</a></li>
+            <li><a href="/logout">logout</a></li>
+        </ul>
+    -->
+    <input type="button" id="btn_toggle" value=" Toggle " />
+    <input type="button" id="btn_newgroup" value=" * New Group " />
+    <input type="button" id="btn_newnote" value=" * New Note " />
+</header>
+
+<div id="main">
+    <div id="col1" class="tcell">
+            <h3><a href="#g=0">All Notes</a></h3>
+            <ul id="groups">
+                $for group in model.groups
+                  <li id="g$group.id"><a href="#g=$group.id">$group.name</a> <span>$group.notescount</span></li>
+            </ul>
+            <h3><a href="#g=deleted">Delete Notes</a></h3>
+    </div>
+    <div id="col2" class="tcell">
+           <div id="searchbar"><input type="text" value="keywords" /></div>
+           <ul id="ulnotes">
+            $for note in model.notes
+                <li><a id="notesumary_$note.id" href="#n=$note.id">$note.summary[:10]</a></li>
+           </ul>
+    </div>
+    <div id="col3" class="tcell">
+        <ul id="openednotes">
+            $for note in model.onotes
+                <li><a id="opened_$note.id" href="#n=$note.id">$note.summary[:10]</a> <span>X</span></li>
+        </ul>
+        <form id="note_form">
+            <input id="noteid" name="id" type="hidden" value='0' />
+            <input id="note_groupid" name="groupid" type="hidden" value='0' />
+            <textarea id="txtnote" name="notes" style="width:100%;"></textarea>
+       </form>
+    </div>
+</div>
+<input id="selectedgroupid" type="hidden" value="0" />
+<script src="/static/jquery-1.6.2.js"></script>
+<script src="/static/jquery.cookie.js"></script>
+<script src="/static/jquery.tmpl.min.js"></script>
+<script src="/static/base64.js"></script>
+<script src="/static/main.js"></script>
+</body>
+</html>

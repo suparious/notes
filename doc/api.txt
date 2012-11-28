@@ -1,0 +1,110 @@
+/* Free Notes Interface, FNI
+*/
+
+
+I REST API
+/user/register
+  method:    post
+  usage:     register new user
+  request:   email=xx@ss.com&password=1223
+  response:  ?
+
+/user/login
+  method:    post
+  usage:     User login
+  request:   email=xx@ss.com&password=1223
+  response:  json {'uid':'12','appcode':'iksue#sk!'}
+
+/user/getpassword
+  method:    post
+  usage:     User login
+  request:   email=xx@ss.com
+  response:  json
+
+/groups
+  method:    get
+  usage:     all the current user's groups
+  request:   none
+  response:  json [{...},{...},{...},{...}]
+
+/group/0
+  method:    post
+  usage:     create new group
+  request:   name=groupname
+  response:  json {id=123}
+
+/group/{id}
+  method:    get
+  usage:     get the group by its id
+  request:   none
+  response:  json {}
+
+  method:    put
+  usage:     update the group
+  request:   name=groupname
+  response:  ?
+
+  method:    delete
+  usage:     delete the group
+  request:   none
+  response:  ?
+
+/notes/{gid}
+  method:    get
+  usage:     get notes by group id, if gid=0, get all the current user's notes
+  request:   gid=123 or gid=0
+  response:  json
+
+/note/0
+  method:    post
+  usage:     create new note
+  request:   gid=123&note=hello
+  response:  {'nid':12}
+
+
+/note/{id}
+  method:    get
+  usage:     get note by its id
+  request:   none
+  response:  json
+
+  method:    put
+  usage:     update note
+  request:   gid=23&note=ssss
+  response:  ?
+
+  method:    delete
+  usage:     delete note
+  request:   none
+  response:  ?
+
+/notes/opened
+  method:    get
+  usage:     get the opened notes
+  request:   none
+  response:  json [{'id':2,'title':'sss','order':1},{...},{...},{...}]
+
+  method:    put
+  usage:     update the opened notes
+  request:   json [{'id':2,'title':'sss','order':1},{...},{...},{...}]
+  response:  json
+
+/notes/deleted
+  method:    get
+  usage:     get the deleted notes
+  request:   none
+  response:  json
+
+  method:    delete
+  usage:     empty the deleted notes from db
+  request:   none
+  response:  ?
+
+II: questions
+1. auth, use the basic auth? login,get user id + appcode, take the info to every request ?
+2. response:
+    a. unauthorized , userid+appcode is not correct. web.unauthorized()
+    b. 400 Bad Request, web.badrequest() arguments error?
+    c. 404, web.notfound(). for single item, the item is not exist, or the item is not belong the current user.
+    d: 200,ok
+

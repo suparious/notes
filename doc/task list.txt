@@ -1,0 +1,91 @@
+1. create new group
+click New Group button,
+a: show a text box in the first(or last?) groups item,  
+ if, text box is change, create new, post to server
+ else, blur and not change, hide the text box ,cancel 
+b: popup a window to input the group name, click ok to save, other cancel.
+
+2. edit an exist group name
+when the mouse over one group,
+show the edit button,
+click the edit button,
+show the text box to edit group name,
+if blur ,hide text box, cancel,
+if change, save the group,put to server, hide text box.
+
+3. delete a group
+when mouse is over group, show the delete button,
+click and delete, don't need popup window to confirm.
+note:if the group include note, don't show the delete button.
+
+4.opened list
+there is a tabs bar on the note text box, like chrome browser tab.
+it is used to show the notes which are used frequently.
+
+open:
+when user click the note in the notes list,
+if it is not exist in the opened list, add it and active it.
+if it is exist in the opened list, active it.
+
+new:
+click the [New note] button in the toolbar, post to server to create a new note record and get the note id. then add a new tab in the opened list.
+question: may be the solution will waste the note id resource ?
+
+close:
+when the mouse over an note tab, show the close button in tab, click the close button, save the note and remove the note from the opened list. 
+
+move:
+the user can drag-drop the tab to change the note's order in the list.
+
+and more detail, please following the chrome's tabs bar. 
+e.g. if too much opened notes in the bar ?
+
+5.auto save
+if the note content in the text box is changed by user,it should be saved, 
+but to increase the client-server connect times, we should have a time span.
+
+save into local cache at first?
+when user close the browser and reopen,the content is still here.
+
+enhancement ...
+
+6.note delete
+delete from normal, move the note to the trash
+delete from trash, delete from the database.
+restore,
+multi delete?
+multi restore? 
+
+
+7.html editor
+find a html editor base on jQuery,
+it should be very simple, not include a lot of buttons we don't need.
+
+8. about width
+there are three columns in the workplace,
+
+column 1 : note groups
+column 2 : note list
+column 3 : the current active note 
+
+click Toggle button:
+show/hide col1 and col2
+
+drag-drop col space:
+c1 and c2, set the c1's width, c2 is fixed, c3 will be changed.
+c2 and c3, set the c2's width, c1 is fixed, c3 will be changed.
+
+when the width is change, save the data to the local.
+
+9.about height
+the height is 100%, no more, no less.
+when the browser's height is change, keep 100%.
+
+so, the browser's scroll bar is not necessarily.
+
+but the columns area(groups,notes,note) should have its own scroll bar.
+
+the scroll bar style should be more suitable. 
+
+
+

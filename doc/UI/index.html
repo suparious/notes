@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>free notes</title>
+<style>
+body {margin:0;}
+.clr{clear:both;}
+
+#topbar {}
+    #start {}
+    #topbar ul {list-style:none;margin:0;padding:0;background:#333333;height:35px;}
+    #topbar li {float:left;padding:0px;}
+    #topbar li a {background:#333333;color:#cccccc;display:block;font-weight:normal;line-height:35px;margin:0px;padding:0px 25px;text-align:center;text-decoration:none;}
+    #topbar li a:hover {background: #2580a2;color:#FFFFFF;text-decoration:none;}
+    #topbar li:hover ul{display:block;}
+#main {margin:10px;}
+    #left {float:left;width:360px;margin:0;padding:1em;}
+        #groups {float:left;width:180px;}
+            #groups ul {list-style:none;margin:0;padding:0;}
+            #groups li {padding:0px;}
+        #notes {margin-left:180px;}
+            #searchbar {}
+            #notes ul {list-style:none;margin:0;padding:0;}
+            #notes li {padding:0px;}
+    #right{margin-left:380px;border-left:1px solid gray;padding: 1px;min-width:36em;}
+
+
+.menu {background:#333333;display:none;height:auto;padding:0px;margin:0px;border:0px;position:absolute;z-index:200;/*top:1em;/*left:0;*/}
+.menu li {display:block;float:none;margin:0px;padding:0px;}
+.menu li a {display:block;height:35px;font-size:12px;font-style:normal;margin:0px;padding:0px 10px 0px 15px;text-align:left;}
+.menu li a:hover {border:0px;color:#ffffff;text-decoration:none;}
+
+</style>
+</head>
+<body>
+
+<div id="topbar">
+    <ul id="commonnotes">
+        <li id="start">
+            <a href="javascript:;">Start</a>
+            <ul class="menu">
+                <li><a href="javascript:;">new group</a></li>
+                <li><a href="javascript:;">new note</a></li>
+                <li><a href="javascript:;">change password</a></li>
+                <li><a href="javascript:;">logout</a></li>
+            </ul>
+        </li>
+        <li><a href="#1">note 1</a></li>
+        <li><a href="#2">note 2</a></li>
+    </ul>
+    <div class="clr"></div>
+</div>
+
+<div id="main">
+    <div id="left">
+        <div id="groups">
+            <ul id="ulgroups">
+                <li><a href="/">所有Notes</a> <a href="javascript:;">new</a></li>
+                <li>sss</li>
+            </ul>
+            <input id="groupname" name="name" value='sssssssss' />
+        </div>
+
+        <div id="notes">
+            <div id="searchbar">
+            <input type="text" value="keywords" /> <a href="#">new</a>
+            </div>
+            <ul id="ulnotes">
+                <li>Note 1</li>
+                <li>Note 2</li>
+                <li>Note 3</li>
+                <li>Note 4</li>
+            </ul>
+        </div>
+        <div class="clr"></div>
+    </div>
+    <div id="right">
+        <form id="noteform" action="/note/0" method="post">
+            <input type="hidden" name="groupid" value='3' />
+            <textarea id="notes" name="notes" style="width:100%;"></textarea>
+       </form>
+    </div>
+    <div class="clr"></div>
+</div>
+
+</body>
+</html>
